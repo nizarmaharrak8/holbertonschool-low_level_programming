@@ -14,10 +14,12 @@
 
 int main(void)
 {
-char x;
-for(x = 'a'; x <= 'z'; x++)
+int x;
+for (x = 'a'; x <= 'z'; x++)
 {
 putchar(x);
+putchar(x + 1);
+
 }
 putchar('\n');
 
