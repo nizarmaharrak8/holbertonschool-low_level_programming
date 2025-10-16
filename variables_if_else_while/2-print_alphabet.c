@@ -18,7 +18,7 @@ int x;
 for (x = 'a'; x <= 'z'; x++)
 {
 putchar(x);
-putchar(x + 1);
+putchar(x + '0');
 
 }
 putchar('\n');
