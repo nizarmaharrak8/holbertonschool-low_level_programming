@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(void)
+{
+    char ch;
+
+    for (ch = 'a'; ch <= 'z'; ch++)
+        putchar(ch);
+    for (ch = 'A'; ch <= 'Z'; ch++)
+        putchar(ch);
+    putchar('\n');
+
+    return (0);
+}
+✅ Explanation:
+The first putchar(ch) in the first loop prints all lowercase letters.
+
+The second loop uses the same putchar(ch) to print all uppercase letters.
+
+The third putchar('\n') prints the newline.
+
+Only 3 calls to putchar: one in each loop and one final one.
+
+Let me know if you’d like the version in another language!
+
+
+
