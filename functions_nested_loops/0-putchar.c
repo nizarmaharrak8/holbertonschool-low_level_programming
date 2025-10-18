@@ -1,12 +1,10 @@
-#include <stdio.h>
-/**
-* _putchar - writes a character to stdout
-* @c: The character to print
-*
-* Return: On success 1, on error -1
-*/
-int _putchar(char c); // function prototype
+#include "main.h"
 
+/**
+* main - Entry point
+*
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
 char *str = "_putchar\n";
@@ -18,6 +16,5 @@ _putchar(str[i]);
 i++;
 }
 
-return 0;
+return (0);
 }
-
