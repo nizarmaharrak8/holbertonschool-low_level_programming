@@ -6,20 +6,21 @@
  * @str: The string to print from
  *
  * Description: Prints characters at positions 0, 2, 4, etc.,
- * followed by a new line. Works safely for empty strings.
+ * followed by a new line. Works safely for empty strings and long strings.
  */
 void puts2(char *str)
 {
-int i = 0;
+int i, len;
 
-if (str == NULL)
+if (!str)
 return;
 
-while (str[i] != '\0')
-{
+len = 0;
+while (str[len] != '\0')
+len++;
+
+for (i = 0; i < len; i += 2)
 _putchar(str[i]);
-i += 2;
-}
 
 _putchar('\n');
 }
