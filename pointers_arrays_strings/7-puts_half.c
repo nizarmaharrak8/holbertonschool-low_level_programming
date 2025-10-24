@@ -1,6 +1,13 @@
 #include "main.h"
 #include <stddef.h>
 
+/**
+ * puts_half - Prints the second half of a string, followed by a new line
+ * @str: The string to print
+ *
+ * Description: If the length of the string is odd, prints the last
+ * (length + 1) / 2 characters. Prints nothing if str is NULL.
+ */
 void puts_half(char *str)
 {
 int len = 0, i, start;
