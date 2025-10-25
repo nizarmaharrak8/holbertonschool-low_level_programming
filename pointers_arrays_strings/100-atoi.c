@@ -24,15 +24,13 @@ int _atoi(char *s)
 		i++;
 	}
 
+	/* Handle INT_MIN safely to avoid overflow */
 	if (sign == -1)
 	{
-		if (result > 2147483648U)
-			result = 2147483648U; /* clamp if out of int range */
-		return (-(int)(result - 0U)); /* prevent undefined behavior */
+		if (result == 2147483648U)
+			return (-2147483648);
+		return (-((int)result));
 	}
-
-	if (result > 2147483647U)
-		result = 2147483647U;
 
 	return ((int)result);
 }
