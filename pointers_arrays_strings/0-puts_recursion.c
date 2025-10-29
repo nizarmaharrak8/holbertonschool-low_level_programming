@@ -2,17 +2,17 @@
 
 /**
  * _puts_recursion - prints a string followed by a new line
- * @s: the string to print
+ * @s: string to print
  */
 void _puts_recursion(char *s)
 {
-    if (*s == '\0')  /* قاعدة التوقف: إذا وصلنا لنهاية السلسلة */
+    if (*s == '\0') /* Base case: end of string */
     {
-        _putchar('\n');  /* نضيف سطر جديد */
+        _putchar('\n');
         return;
     }
 
-    _putchar(*s);           /* طباعة الحرف الحالي */
-    _puts_recursion(s + 1); /* استدعاء الدالة للحرف التالي */
+    _putchar(*s);       /* Print current character */
+    _puts_recursion(s + 1); /* Recursive call with next character */
 }
 
