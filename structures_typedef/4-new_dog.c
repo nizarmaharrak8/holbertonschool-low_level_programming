@@ -1,7 +1,45 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "dog.h"
+
+/**
+ * _str_len - returns the length of a string
+ * @s: string to measure
+ *
+ * Return: length of string
+ */
+int _str_len(char *s)
+{
+	int len = 0;
+
+	if (!s)
+		return (0);
+	while (s[len])
+		len++;
+	return (len);
+}
+
+/**
+ * _str_copy - copies a string from src to dest
+ * @dest: destination string
+ * @src: source string
+ *
+ * Return: pointer to dest
+ */
+char *_str_copy(char *dest, char *src)
+{
+	int i = 0;
+
+	if (!src || !dest)
+		return (NULL);
+
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
 
 /**
  * new_dog - creates a new dog_t instance
@@ -14,36 +52,36 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
-	char *name_copy, *owner_copy;
+	char *name_copy = NULL, *owner_copy = NULL;
+	int len;
 
 	d = malloc(sizeof(dog_t));
-	if (d == NULL)
+	if (!d)
 		return (NULL);
 
-	name_copy = NULL;
-	owner_copy = NULL;
-
-	if (name != NULL)
+	if (name)
 	{
-		name_copy = malloc(strlen(name) + 1);
-		if (name_copy == NULL)
+		len = _str_len(name);
+		name_copy = malloc(len + 1);
+		if (!name_copy)
 		{
 			free(d);
 			return (NULL);
 		}
-		strcpy(name_copy, name);
+		_str_copy(name_copy, name);
 	}
 
-	if (owner != NULL)
+	if (owner)
 	{
-		owner_copy = malloc(strlen(owner) + 1);
-		if (owner_copy == NULL)
+		len = _str_len(owner);
+		owner_copy = malloc(len + 1);
+		if (!owner_copy)
 		{
 			free(name_copy);
 			free(d);
 			return (NULL);
 		}
-		strcpy(owner_copy, owner);
+		_str_copy(owner_copy, owner);
 	}
 
 	d->name = name_copy;
