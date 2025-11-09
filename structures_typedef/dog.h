@@ -1,13 +1,13 @@
 #ifndef DOG_H
 #define DOG_H
 
+#include <stddef.h>
+
 /**
- * struct dog - defines a dog
- * @name: dog's name
- * @age: dog's age
- * @owner: dog's owner
- *
- * Description: structure that stores information about a dog
+ * struct dog - structure to store dog information
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
  */
 struct dog
 {
@@ -17,5 +17,7 @@ struct dog
 };
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
 
 #endif /* DOG_H */
+
