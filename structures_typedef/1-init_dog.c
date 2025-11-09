@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stddef.h> 
 
 /**
  * init_dog - initializes a variable of type struct dog
@@ -9,6 +10,7 @@
  *
  * Description: This function assigns the given values to
  * the members of the struct dog pointed to by d.
+ * If d is NULL, the function does nothing.
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
