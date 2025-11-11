@@ -1,18 +1,19 @@
 #include "function_pointers.h"
-#include <stdlib.h>
+#include <stddef.h>
 
 /**
- * alloc_grid - creates a 2D array of integers
- * @width: number of columns
- * @height: number of rows
+ * print_name - calls a function to print a name
+ * @name: name of the person to print
+ * @f: pointer to a function that takes a char * and returns nothing
  *
- * Return: pointer to 2D array, or NULL on failure
+ * Description: If f is not NULL, this function calls f(name),
+ * allowing different printing behaviors depending on the function passed.
  */
 void print_name(char *name, void (*f)(char *))
 {
- if (f != NULL)   
-    {
-        f(name);     
-    }
+	if (name != NULL && f != NULL)
+	{
+		f(name);
+	}
 }
 
