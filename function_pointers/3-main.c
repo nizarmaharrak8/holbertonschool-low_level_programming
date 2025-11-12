@@ -3,15 +3,14 @@
 #include "3-calc.h"
 
 /**
- * main - performs simple operations
- * @argc: argument count
- * @argv: argument vector
- *
- * Return: 0 on success, otherwise exit with error
+ * main - performs simple arithmetic operations
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: 0 on success, exits with codes 98, 99, 100 on error
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
+	int num1, num2;
 	int (*op_func)(int, int);
 
 	if (argc != 4)
@@ -22,8 +21,8 @@ int main(int argc, char *argv[])
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-
 	op_func = get_op_func(argv[2]);
+
 	if (!op_func)
 	{
 		printf("Error\n");
@@ -36,9 +35,7 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	result = op_func(num1, num2);
-	printf("%d\n", result);
-
+	printf("%d\n", op_func(num1, num2));
 	return (0);
 }
 
