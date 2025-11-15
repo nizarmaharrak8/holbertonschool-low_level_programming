@@ -32,8 +32,3 @@ printf("%s%s", sep, str);
 sep = ", ";
 i++;
 }
-
-printf("\n");
-va_end(args);
-}
-
