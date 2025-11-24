@@ -13,10 +13,12 @@
  */
 typedef struct list_s
 {
-	char *str;          /* استخدم tab هنا بدل مسافات */
-	unsigned int len;   /* استخدم tab هنا بدل مسافات */
-	struct list_s *next;/* استخدم tab هنا بدل مسافات */
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
-size_t print_list(const list_t_
+size_t print_list(const list_t *h);
+
+#endif /* LISTS_H */
 
