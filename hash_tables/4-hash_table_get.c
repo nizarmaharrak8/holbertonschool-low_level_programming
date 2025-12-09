@@ -27,6 +27,6 @@ return (node->value);
 node = node->next;
 }
 
-    return (NULL);
+return (NULL);
 }
 
