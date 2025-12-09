@@ -7,7 +7,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 unsigned long int index;
    hash_node_t *node;
 	char *n;
-if (ht == NULL || key == NULL || )
+if (ht == NULL || key == NULL)
                 return (NULL);
 
 	
@@ -16,10 +16,10 @@ if (ht == NULL || key == NULL || )
  	node = ht->array[index];
 
 if (node == NULL)
-	return(NULL)
+	return(NULL);
 
-n = node->value 
-return(n)
+n = node->value; 
+return(n);
 
 
 
