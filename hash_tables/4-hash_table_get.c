@@ -1,11 +1,27 @@
 #include "hash_tables_h"
 #include <string>
 
-int index; 
-char *hash_table_get(const hash_table_t *ht, const char *key);
+ 
+char *hash_table_get(const hash_table_t *ht, const char *key)
+{
+unsigned long int index;
+   hash_node_t *node;
+	char *n;
+if (ht == NULL || key == NULL || )
+                return (NULL);
 
-if (ht == NULL || key == NULL || value == NULL || strlen(key) == 0)
-                return (0);
+	
 
-	index = key_index(key)
+        index = key_index((const unsigned char *)key, ht->size);
+ 	node = ht->array[index];
 
+if (node == NULL)
+	return(NULL)
+
+n = node->value 
+return(n)
+
+
+
+
+}
